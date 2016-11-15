@@ -1,0 +1,9 @@
+[package]
+name = "ifcfg"
+version = "0.1.0"
+authors = ["Jackal <ywzjackal@163.com>"]
+publish = false
+
+[dependencies]
+libc = "*"
+nix = "*"
