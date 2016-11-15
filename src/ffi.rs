@@ -2,11 +2,11 @@ use libc;
 use std::net::Ipv4Addr;
 
 pub const IFNAMSIZ: usize = 16;
-pub const SIOCGIFNAME: u64 = 0x8910;       /* get iface name               */
-pub const SIOCGIFADDR: u64 = 0x8915;       /* get PA address               */
-pub const SIOCSIFADDR: u64 = 0x8916;       /* set PA address               */
-pub const SIOCGIFNETMASK: u64 = 0x891b;    /* get network PA mask          */
-pub const SIOCSIFNETMASK: u64 = 0x891c;    /* set network PA mask          */
+pub const SIOCGIFNAME: libc::c_ulong = 0x8910;       /* get iface name               */
+pub const SIOCGIFADDR: libc::c_ulong = 0x8915;       /* get PA address               */
+pub const SIOCSIFADDR: libc::c_ulong = 0x8916;       /* set PA address               */
+pub const SIOCGIFNETMASK: libc::c_ulong = 0x891b;    /* get network PA mask          */
+pub const SIOCSIFNETMASK: libc::c_ulong = 0x891c;    /* set network PA mask          */
 
 #[repr(C)]
 #[derive(Debug)]
