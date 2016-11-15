@@ -1,4 +1,9 @@
 extern crate libc;
-extern crate nix;
 
 pub mod ffi;
+
+#[cfg(target_os = "linux")]
+#[path = "linux.rs"]
+mod linux;
+
+pub use linux::*;
