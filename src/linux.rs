@@ -20,7 +20,7 @@ pub fn get_ipv4byname(name: &str) -> std::io::Result<std::net::Ipv4Addr> {
     }
 }
 
-pub fn get_maskbyname(name: &str) -> std::io::Result<std::net::Ipv4Addr> {
+pub fn get_maskv4byname(name: &str) -> std::io::Result<std::net::Ipv4Addr> {
     let mut ifni = ffi::ifreq_addr::new();
     ifni.ifr_name.set(name);
     unsafe {
