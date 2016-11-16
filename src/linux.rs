@@ -42,7 +42,7 @@ pub fn set_ipv4byname(name: &str, ip: std::net::Ipv4Addr) -> std::io::Result<()>
     let mut ifni = ffi::ifreq_addr::new();
     ifni.ifr_name.set(name);
     ifni.ifr_addr.set_addr(ip);
-    ifni.ifr_addr.set_family = super::AF_INET;
+    ifni.ifr_addr.set_family(super::AF_INET);
     unsafe {
         let fd: libc::c_int = libc::socket(libc::AF_INET, libc::SOCK_DGRAM, libc::IPPROTO_IP);
         if fd < 0 {
@@ -62,7 +62,7 @@ pub fn set_maskv4byname(name: &str, ip: std::net::Ipv4Addr) -> std::io::Result<(
     let mut ifni = ffi::ifreq_addr::new();
     ifni.ifr_name.set(name);
     ifni.ifr_addr.set_addr(ip);
-    ifni.ifr_addr.set_family = super::AF_INET;
+    ifni.ifr_addr.set_family(super::AF_INET);
     unsafe {
         let fd: libc::c_int = libc::socket(libc::AF_INET, libc::SOCK_DGRAM, libc::IPPROTO_IP);
         if fd < 0 {
